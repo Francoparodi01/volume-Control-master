@@ -1,11 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from ctypes import cast, POINTER, windll
-from comtypes import CLSCTX_ALL, CoInitialize  # Importa CoInitialize desde comtypes
+from comtypes import CLSCTX_ALL, CoInitialize  
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 
 app = Flask(__name__)
-CORS(app)  #
+CORS(app)  
 
 def get_audio_sessions():
     # Inicializa COM

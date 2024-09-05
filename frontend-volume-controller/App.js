@@ -5,6 +5,7 @@ import Slider from '@react-native-community/slider';
 export default function App() {
   const [sessions, setSessions] = useState([]);
 
+  //Ingresamos el ip de nuestra pc, entre las // y el :5000
   useEffect(() => {
     const fetchData = () => {
       fetch('http://192.168.0.147:5000/volume')
@@ -18,8 +19,6 @@ export default function App() {
 
     // Configura la recarga automática cada 5 segundos
     const interval = setInterval(fetchData, 5000);
-
-    // Limpia el intervalo cuando el componente se desmonta
     return () => clearInterval(interval);
   }, []);
 
